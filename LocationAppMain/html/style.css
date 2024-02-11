@@ -1,0 +1,224 @@
+
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    margin: 0%;
+    overflow: hidden; 
+    background: rgb(20  , 25, 45);
+  }
+  
+
+.square-box {
+    width: 200px;
+    height: 250px;
+    border: 1px;
+    background-color: hwb(0 0% 100% / 0.384);
+    transform: translate(50%, 0);
+    font-family: arial;
+    border-radius: 15px;
+    padding: 10%;
+    right: 50%;
+    top: 30%;
+    text-decoration: none;
+    position: fixed;
+    
+}
+
+.contains {
+    width: 200px;
+    height: 200px;
+}
+
+
+.center {
+  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 25px;
+  
+}
+
+canvas {
+    display: block;
+    background:hsl(222, 25%, 20%);
+  }
+
+canvas { 
+    position: absolute;
+    z-index: -1;
+  }
+
+.btn{
+    color: #fff;
+    background: linear-gradient(270deg, #46cbda, #9122ad , #e07d8a);
+    font-family: 'Comfortaa', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+.btn:hover{
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.29);
+    animation: rotate 0.7s ease-in-out both;
+}
+
+.btn:before,
+.btn:after{
+    content: '';
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.btn:hover:before,
+.btn:hover:after{
+    opacity: 0.15;
+}
+
+.btn:hover:before{ transform: translate3d(50%, 0, 0) scale(0.9); }
+.btn:hover:after{ transform: translate(50%, 0) scale(1.1); }
+
+@keyframes rotate{
+    0%{ transform: rotate(0deg); }
+    25%{ transform: rotate(3deg); }
+    50%{ transform: rotate(-3deg); }
+    75%{ transform: rotate(1deg); }
+    100%{ transform: rotate(0deg); }
+}
+
+
+#map {
+    height: 100vh;
+    width: 75vw;
+}
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.leaflet-popup-content-wrapper{
+    padding:0;
+    overflow:hidden;
+    box-shadow: 0px 5px 10px 0px rgba(241, 223, 223, 0.447); 
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content{
+    margin:0;
+}
+
+.leaflet-popup-content-wrapper h4 {
+    padding:13px;
+    background:	#ffdbdc;
+    color:#424b54;
+    font-size:13px;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper p{
+    padding: 0 16px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    color: #59260b;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content .phone-number{
+    padding:16px;
+    padding-top:0;
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content .phone-number a{
+    font-size:13px;
+    color:#59260b;
+    
+}
+
+
+
+*{
+    box-sizing: border-box;
+    -webkit-font-smoothing:antialiased;
+    padding:0;
+    margin:0;
+}
+
+.containerLocations{
+    display:flex;
+     
+}
+
+.locationsList{
+    width:25vw;
+    height:100vh;
+    overflow: auto;
+    background: #d9a7c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.locationsList .heading{
+    background:hwb(320 23% 57% / 0.186);
+    color:#fff;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+.locationsList .heading h2{
+    padding: 1rem;
+}
+
+.locationsList ul.list{
+    padding: 0 1rem;
+    list-style-type:none;
+}
+
+.locationsList .office-item {
+    margin : 1rem 0;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Segoe UI';
+}
+
+.locationsList li:last-child .office-item{
+    border:none;
+   
+}
+
+.locationsList .office-item a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #616163;
+    font-weight: 700;
+    
+    
+}
+
+.locationsList .office-item p {
+    font-size: 14px;
+    color:#59260b;
+}
